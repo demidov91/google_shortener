@@ -16,3 +16,11 @@ def shorten(url):
     )
     ret = urllib2.urlopen(req).read()
     return json.loads(ret)['id']
+
+
+"""
+Return **True** if *url* looks like a result of
+the *shorten* function. Return **False** other way.
+"""
+def is_short(url):
+    return url.startswith('http://goo.gl/')
